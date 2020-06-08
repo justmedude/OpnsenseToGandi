@@ -3,6 +3,8 @@
 import OpnsenseIP
 import Gandi
 
+import config
+
 
 def main(
         router_hostname, router_apikey, router_apisecret,
@@ -27,17 +29,7 @@ def main(
 
 
 if __name__ == '__main__':
-    iface_mapping = {
-        'external-name-1': 'igb0',
-        'external-name-2': 'igb2'
-    }
-    domain = 'example.com'
-
-    router_hostname = '192.168.1.1'
-    router_apikey = 'my_router_apikey' # noqa
-    router_apisecret = 'my_router_apisecret'
-
-    gandi_apisecret = 'my_gandi_apisecret'
     main(
-        router_hostname, router_apikey, router_apisecret, gandi_apisecret,
-        domain, iface_mapping)
+        config.router_hostname, config.router_apikey,
+        config.router_apisecret, config.gandi_apisecret,
+        config.domain, config.iface_mapping)

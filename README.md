@@ -8,6 +8,9 @@ Gandi LiveDNS based on multiple WAN connections on my Opnsense router.
 purposes, you can modify it, or else import it into your own module
 and call the main in a similar manner as the example show in there.
 
+If you want to call `updater.py` directly, you just need to modify `config.py`
+for your own needs.
+
 Both the `Gandi.py` and `Opnsense.py` modules are fairly standalone, which
 could allow you to embrace/extend for other projects.
 
