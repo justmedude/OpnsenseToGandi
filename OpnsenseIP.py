@@ -13,14 +13,17 @@ class OpnSense:
         self.auth = (apikey, apisecret)
         self.base_url = 'https://%s/api' % hostname
 
-    def Get(self, uri):
+    def Get(self, uri, json_output=True):
         url = '%s/%s' % (self.base_url, uri)
         resp = requests.get(url, verify=False, auth=self.auth)
         if resp.status_code != 200:
             print('Connection issue')
             return None
 
-        return resp.json()
+        if json_output is False:
+            return resp.text
+        else:
+            return resp.json()
 
     def GetIps(self):
         ipdict = {}
