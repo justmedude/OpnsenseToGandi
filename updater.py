@@ -3,9 +3,6 @@
 import OpnsenseIP
 import Gandi
 
-import config
-
-
 def main(
         router_hostname, router_apikey, router_apisecret,
         gandi_apisecret, domain, iface_mapping):
@@ -29,6 +26,7 @@ def main(
 
 
 if __name__ == '__main__':
+    import config
     main(
         config.router_hostname, config.router_apikey,
         config.router_apisecret, config.gandi_apisecret,

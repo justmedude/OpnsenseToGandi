@@ -4,9 +4,9 @@ import OpnsenseIP
 import time
 import os
 
-import config
 
 if __name__ == '__main__':
+    import config
     if not os.path.exists('backups'):
         os.makedirs('backups')
     router_conn = OpnsenseIP.OpnSense(
